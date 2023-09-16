@@ -267,9 +267,24 @@ img {
 }
 
 .container {
-  width: 1158px;
-  padding: 0 15px;
-  margin: 0 auto;
+  max-width: 428px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 /* Top section */
@@ -336,6 +351,18 @@ img {
   max-width: 496px;
   margin: 0 auto 48px;
 }
+
+@media screen and (max-width: 428px) {
+  .hero-text {
+    max-width: 320px;
+    margin: 0 auto 72px;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+  }
+}
+
 .hero-button {
   display: block;
   min-width: 169px;
@@ -357,7 +384,7 @@ img {
   gap: 24px;
 }
 .benefits-item {
-  width: 264px;
+  max-width: 264px;
   flex-basis: calc((100% - 3 * 24px) / 4);
 }
 .benefits-thumb {
@@ -373,6 +400,49 @@ img {
 }
 .benefits-title-point {
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .benefits-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+  }
+  .benefits-item {
+    max-width: 396px;
+  }
+  .benefits-title-point {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .benefits-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px 24px;
+  }
+
+  .benefits-item {
+    max-width: 356px;
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+@media screen and (max-width: 1157.98px) {
+  .benefits {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .benefits-thumb {
+    display: none;
+  }
+  .benefits-title-point {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+  }
+  .benefits-text {
+    font-weight: 500;
+  }
 }
 
 /* Section 2 structure */
@@ -391,6 +461,11 @@ img {
   border: 1px solid var(--cornflower, #e7e9fc);
   flex-basis: calc((100% - 2 * 24px) / 3);
 }
+@media screen and (max-width: 1157.98px) {
+  .product {
+    display: none;
+  }
+}
 
 /* Section 3 structure */
 .team {
@@ -404,7 +479,7 @@ img {
   gap: 24px;
 }
 .team-list-item {
-  width: 264px;
+  max-width: 264px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -453,6 +528,28 @@ img {
   fill: #f4f4fd;
 }
 
+@media screen and (max-width: 767.98px) {
+  .team-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .team-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px 24px;
+  }
+  .team-list-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+@media screen and (max-width: 1157.98px) {
+  .team {
+    padding: 96px 0;
+  }
+}
+
 /* Section 4 structure */
 .customers {
   padding: 120px 0;
@@ -463,18 +560,19 @@ img {
 .customers-list {
   display: flex;
   justify-content: center;
-  max-width: 1440px;
-  gap: 24px;
+  max-width: 1128px;
   gap: 24px;
 }
 .customers-thumb {
-  flex-basis: calc((100% - 24px * 5) / 6);
+  width: 168px;
   height: 88px;
+  flex-basis: calc((100% - 24px * 5) / 6);
 }
 .customers-link {
   display: flex;
   width: 100%;
   height: 100%;
+  padding: 16px 32px;
   align-items: center;
   justify-content: center;
   color: #8e8f99;
@@ -490,6 +588,39 @@ img {
 }
 .customers-icon {
   fill: currentColor;
+}
+
+@media screen and (max-width: 767.98px) {
+  .customers-list {
+    max-width: 396px;
+    gap: 72px 16px;
+  }
+  .customers-link {
+    padding: 16px 40px;
+  }
+  .customers-thumb {
+    flex-basis: calc((100% - 16px * 1) / 2);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .customers-list {
+    max-width: 552px;
+    gap: 72px 24px;
+    margin: 0 auto;
+  }
+  .customers-thumb {
+    flex-basis: calc((100% - 24px * 2) / 3);
+  }
+}
+
+@media screen and (max-width: 1157.98px) {
+  .customers {
+    padding: 96px 0;
+  }
+  .customers-list {
+    flex-wrap: wrap;
+  }
 }
 
 /* Footer structure */
