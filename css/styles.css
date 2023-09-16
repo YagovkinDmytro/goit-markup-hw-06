@@ -353,6 +353,9 @@ img {
 }
 
 @media screen and (max-width: 428px) {
+  .hero {
+    padding: 112px 0;
+  }
   .hero-text {
     max-width: 320px;
     margin: 0 auto 72px;
@@ -993,4 +996,16 @@ input[type="checkbox"]:checked
   line-height: 1.16;
   letter-spacing: 0.03em;
   text-decoration-line: underline;
+}
+
+@media screen and (max-width: 1157.98px) {
+  .modal {
+    max-width: 392px;
+    top: 388px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .modal {
+    top: 372px;
+  }
 }
