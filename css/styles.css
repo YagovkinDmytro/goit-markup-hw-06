@@ -637,7 +637,11 @@ img {
     gap: 72px 16px;
   }
   .customers-link {
+    max-width: 396px;
     padding: 16px 40px;
+  }
+  .customers-icon {
+    flex-shrink: 0;
   }
   .customers-thumb {
     flex-basis: calc((100% - 16px * 1) / 2);
@@ -765,6 +769,64 @@ img {
 .footer-email-icon {
   fill: #fff;
   margin-left: 16px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .footer {
+    padding: 96px 0;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+  }
+  .footer-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .footer-subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-subscribe-thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-subscribe-lable {
+    width: 100%;
+    max-width: 398px;
+  }
+  .footer-subscribe-input {
+    width: 100%;
+    max-width: 398px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .footer-container {
+    flex-wrap: wrap;
+    padding-left: 108px;
+  }
+  .footer-link {
+    margin-right: 24px;
+    margin-bottom: 72px;
+  }
+}
+@media screen and (max-width: 1157.98px) {
+  .footer-subscribe-input {
+    opacity: 0.6;
+  }
 }
 
 /* Prtfolio button section  */
