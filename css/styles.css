@@ -359,6 +359,25 @@ img {
     display: none;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .logo-header {
+    margin-right: 120px;
+  }
+  .info-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .info-contact {
+    margin-right: 0;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+  }
+}
 
 /* Hero section */
 .hero {
@@ -841,7 +860,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 408px;
+  width: 100%;
+  max-width: 408px;
   min-height: 584px;
   padding: 72px 24px 24px;
   border-radius: 4px;
@@ -1031,16 +1051,42 @@ input[type="checkbox"]:checked
 
 /* Mobile menu */
 .mobile-backdrop {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  width: 100%;
+  height: 100%;
+  padding: 80px 35px 40px 40px;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out, visibility 250ms ease-in-out;
+
   background-color: #fff;
+  visibility: hidden;
+  pointer-events: none;
 }
-.mobile-list {
+
+.mobile-backdrop.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.mobile-menu-container {
   display: flex;
   flex-direction: column;
-  padding: 80px;
-  padding-bottom: 284px;
-  padding-left: 40px;
-  gap: 40px;
+
+  width: 100%;
+  height: 100%;
+  max-width: 428px;
+}
+.mobile-list {
+  margin-bottom: auto;
+}
+.mobile-item:not(:last-child) {
+  margin-bottom: 40px;
 }
 .mobile-menu-btn {
   background-color: transparent;
@@ -1059,17 +1105,12 @@ input[type="checkbox"]:checked
   position: relative;
   color: var(--OCEAN, #404bbf);
 }
-.current::after {
-  display: none;
-}
-.mobile-contact {
-  padding-left: 40px;
-  margin-bottom: 40px;
-}
+
 .mobile-contact-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-bottom: 48px;
 }
 .mobile-contact-phone-link {
   color: #4d5ae5;
@@ -1080,7 +1121,6 @@ input[type="checkbox"]:checked
   letter-spacing: 0.02em;
   text-transform: capitalize;
 }
-
 .mobile-contact-email-link {
   color: #434455;
   font-family: Roboto;
@@ -1090,14 +1130,12 @@ input[type="checkbox"]:checked
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
-
 .mobile-menu-sotials {
   display: flex;
   gap: 56px;
-  padding-left: 40px;
 }
 
-@media screen and (min-width: 429px) {
+@media screen and (max-width: 767.98px) {
   .current::after {
     display: none;
   }
